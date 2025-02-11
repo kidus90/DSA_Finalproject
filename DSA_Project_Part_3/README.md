@@ -1,1 +1,1 @@
-"# DSA-Project" 
+"This Python project primarily focuses on the implementation of a linked list. We utilized the linked list to efficiently sort data and manage cache removal when it becomes full. Additionally, we developed a user interface (UI) to enhance the overall user experience."
