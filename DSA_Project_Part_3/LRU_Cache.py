@@ -4,7 +4,7 @@ from tkinter import messagebox
 
 class Node:
     def __init__(self, value): 
-        """on this part of the code it create a node with a value and a next value"""
+        """On this part of the code it create a node with a value and a next value"""
         self.value = value
         self.next = None
 
@@ -25,7 +25,7 @@ class LRUCache:
         current = self.front
         while current is not None:
             if current.value == value:
-                print("Value found: Ture")
+                print("Value found: True")
                 return True
             if current.next is None:
                 break
