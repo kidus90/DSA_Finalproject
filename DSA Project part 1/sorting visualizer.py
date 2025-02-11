@@ -44,7 +44,8 @@ def selection_sort(data, drawData):
         drawData(data, ['#FFC13F' if x == i or x == min_idx else '#00BFFF' for x in range(len(data))])
         time.sleep(1.0)  # Delay to visualize sorting process
     drawData(data, ['#00BFFF' for x in range(len(data))])  # Final state, all elements are sorted
-    messagebox.showinfo("Sorting Complete", "The sorting process is finished!")  # Show pop-up window
+    messagebox.showinfo("Sorting Complete", "The sorting process is finished!")
+
 # Quick sort algorithm
 def quick_sort(data, drawData, low, high):
     if low < high:
@@ -104,8 +105,6 @@ def partition(data, low, high):
             data[i], data[j] = data[j], data[i]
     data[i + 1], data[high] = data[high], data[i + 1]  # Swap pivot with the element at i + 1
     return i + 1  # Return the pivot index
-
-# Sorting visualizer (No changes)
 
 # Function to draw the data on canvas
 def drawData(data, colorArray):
@@ -174,9 +173,9 @@ def process_input_data():
 def clear_data():
     global data
     data = []  # Reset the data
-    entry_data.delete(0, tk.END)  # Clear the input field
+    entry_data.delete(0, tk.END) # Clear the input field
     error_label.config(text="")  # Clear the error message
-    canvas.delete("all")  # Clear the canvas
+    canvas.delete("all")         # Clear the canvas
     drawData([], [])  # Redraw the empty canvas
 
 # Tkinter UI Setup (Ensure you use grid() for layout consistency)
@@ -218,4 +217,4 @@ tk.Button(button_frame, text="Clear", command=clear_data, bg='#00BFFF', fg='whit
 canvas = tk.Canvas(root, width=600, height=400, bg='#1C1C1C')
 canvas.grid(row=0, column=1, rowspan=2, padx=10, pady=5)
 
-root.mainloop()  # Run the application loop
+root.mainloop()
