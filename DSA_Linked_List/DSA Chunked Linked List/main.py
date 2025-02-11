@@ -363,7 +363,7 @@ class ChunkListWindow(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    file_path = "C:\\Users\\ASUS-ROG\\Downloads\\Telegram Desktop\\DSA project - Copy\\DSA project - Copy\\example.bin"  # Update this path as needed
+    file_path = "DSA_Linked_List\\DSA Chunked Linked List\\example.bin"  # Update this path as needed
     chunk_size = 2 * 1024 * 1024  # 2MB chunks
     window = ChunkListWindow(file_path, chunk_size)
     window.show()
