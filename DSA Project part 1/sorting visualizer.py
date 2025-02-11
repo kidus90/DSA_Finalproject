@@ -18,7 +18,7 @@ def bubble_sort(data, drawData):
                 drawData(data, ['#FFC13F' if x == j or x == j+1 else '#00BFFF' for x in range(len(data))])
                 time.sleep(1.0)  # Delay to visualize sorting process
     drawData(data, ['#00BFFF' for x in range(len(data))])  # Final state, all elements are sorted
-
+    messagebox.showinfo("Sorting Complete", "The sorting process is finished!")  # Show pop-up window
 # Insertion sort algorithm
 def insertion_sort(data, drawData):
     for i in range(1, len(data)):
@@ -32,7 +32,7 @@ def insertion_sort(data, drawData):
         drawData(data, ['#FFC13F' if x == j or x == j+1 else '#00BFFF' for x in range(len(data))])
         time.sleep(1.0)  # Delay to visualize sorting process
     drawData(data, ['#00BFFF' for x in range(len(data))])  # Final state, all elements are sorted
-
+    messagebox.showinfo("Sorting Complete", "The sorting process is finished!")  # Show pop-up window
 # Selection sort algorithm
 def selection_sort(data, drawData):
     for i in range(len(data)):
@@ -45,7 +45,7 @@ def selection_sort(data, drawData):
         drawData(data, ['#FFC13F' if x == i or x == min_idx else '#00BFFF' for x in range(len(data))])
         time.sleep(1.0)  # Delay to visualize sorting process
     drawData(data, ['#00BFFF' for x in range(len(data))])  # Final state, all elements are sorted
-
+    messagebox.showinfo("Sorting Complete", "The sorting process is finished!")  # Show pop-up window
 # Quick sort algorithm
 def quick_sort(data, drawData, low, high):
     if low < high:
@@ -93,7 +93,8 @@ def heap_sort(data, drawData):
         heapify(data, i, 0, drawData)  # Heapify the root again to maintain the heap property
 
     drawData(data, ['#00BFFF' for x in range(len(data))])  # Final state, all elements are sorted
-
+    messagebox.showinfo("Sorting Complete", "The sorting process is finished!")  # Show pop-up window
+    
 # Partition function for quick sort
 def partition(data, low, high):
     pivot = data[high]  # Choose pivot element (last element)
