@@ -381,3 +381,4 @@ if __name__ == "__main__":
     window = ChunkListWindow(file_path, chunk_size)
     window.show()
     sys.exit(app.exec_())
+
