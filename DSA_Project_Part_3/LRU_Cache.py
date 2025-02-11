@@ -66,27 +66,21 @@ class LRUCache:
             self.size -= 1
 
     def remove_node(self, value):
-        prev = None
         current_node = self.front
+        prev = None
 
-        if current_node is None:
-            return
-
-        if current_node.value == value:
-            """on this code it removes the value that is a the front of the linked list"""
-            """then decreases the size of the linked list"""
-            self.front = current_node.next
-            self.size -= 1
-            return
-
-        while current_node is not None and current_node.value != value:
-            """in this code it removes a node that is in between nodes"""
+        while current_node is not None:
+            if current_node.value == value:
+                if prev is None:
+                    # Removing the front node
+                    self.front = current_node.next
+                else:
+                    # Removing a node in between or at the end
+                    prev.next = current_node.next
+                self.size -= 1
+                return
             prev = current_node
             current_node = current_node.next
-
-        prev.next = current_node.next 
-        """removing the current node"""
-        self.size -= 1
 
     def display(self):
         f = self.front
