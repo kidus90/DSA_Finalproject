@@ -49,7 +49,7 @@ def selection_sort(data, drawData):
 # Quick sort algorithm
 def quick_sort(data, drawData, low, high):
     if low < high:
-        pi = partition(data, low, high)  # Partition the data
+        pi = partition(data, low, high)
         # Update the visual representation of the data with pivot highlighted
         drawData(data, ['#FFC13F' if x == pi else '#00BFFF' for x in range(len(data))])
         time.sleep(1.0)  # Delay to visualize sorting process
