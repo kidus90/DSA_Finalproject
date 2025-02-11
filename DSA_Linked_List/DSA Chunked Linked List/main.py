@@ -12,9 +12,7 @@ class SignalEmitter(QObject):
     SignalEmitter class is used to emit signals for various events such as devices discovered,
     file sent, file received, and error occurred.
     """
-    devices_discovered = pyqtSignal(list)
     file_sent = pyqtSignal()
-    file_received = pyqtSignal()
     error_occurred = pyqtSignal(str)
 
 class LinkedList:
@@ -136,9 +134,7 @@ class ChunkListWindow(QMainWindow):
         self.load_chunks()
 
         self.signal_emitter = SignalEmitter()
-        self.signal_emitter.devices_discovered.connect(self.on_devices_discovered)
         self.signal_emitter.file_sent.connect(self.on_file_sent)
-        self.signal_emitter.file_received.connect(self.on_file_received)
         self.signal_emitter.error_occurred.connect(self.on_error_occurred)
         send_button = QPushButton("Send Data")
         send_button.setFixedSize(100, 30)
@@ -260,23 +256,11 @@ class ChunkListWindow(QMainWindow):
         except Exception as e:
             self.signal_emitter.error_occurred.emit(f"Failed to send data: {e}")
 
-    def on_devices_discovered(self, device_list):
-        """
-        Handles the event when devices are discovered.
-        """
-        pass  # No need to implement for local transfer
-
     def on_file_sent(self):
         """
         Handles the event when a file is sent.
         """
         QMessageBox.information(self, "Success", "Data sent successfully.")
-
-    def on_file_received(self):
-        """
-        Handles the event when a file is received.
-        """
-        pass  # No need to implement for local transfer
 
     def on_error_occurred(self, error_message):
         """
