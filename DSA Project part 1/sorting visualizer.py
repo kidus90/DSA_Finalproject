@@ -1,28 +1,27 @@
-import tkinter as tk  # Importing tkinter library for creating GUI
-from tkinter import ttk  # Importing ttk for creating combobox and other widgets
-import random  # Importing random for generating random numbers
-import time  # Importing time for adding delay in sorting algorithms
-from tkinter import messagebox  # Importing messagebox for error alerts
+import tkinter as tk
+from tkinter import ttk
+import random  
+import time  
+from tkinter import messagebox 
 
 data = []  # List to store the data (array to be sorted)
-
-# Sorting algorithms (No changes needed here)
 
 # Bubble sort algorithm
 def bubble_sort(data, drawData):
     for i in range(len(data)-1):
-        for j in range(len(data)-1):
+        for j in range(len(data)-i-1):
             if data[j] > data[j+1]:
                 data[j], data[j+1] = data[j+1], data[j]  # Swap elements if they're out of order
                 # Update the visual representation of the data
                 drawData(data, ['#FFC13F' if x == j or x == j+1 else '#00BFFF' for x in range(len(data))])
                 time.sleep(1.0)  # Delay to visualize sorting process
     drawData(data, ['#00BFFF' for x in range(len(data))])  # Final state, all elements are sorted
-    messagebox.showinfo("Sorting Complete", "The sorting process is finished!")  # Show pop-up window
+    messagebox.showinfo("Sorting Complete", "The sorting process is finished!")  # Show pop-up window when finished
+
 # Insertion sort algorithm
 def insertion_sort(data, drawData):
     for i in range(1, len(data)):
-        key = data[i]  # Element to be inserted
+        key = data[i]
         j = i-1
         while j >= 0 and key < data[j]:  # Find the correct position for key
             data[j + 1] = data[j]  # Move elements to the right
