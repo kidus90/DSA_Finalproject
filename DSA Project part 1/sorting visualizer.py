@@ -176,7 +176,7 @@ def clear_data():
     entry_data.delete(0, tk.END) # Clear the input field
     error_label.config(text="")  # Clear the error message
     canvas.delete("all")         # Clear the canvas
-    drawData([], [])  # Redraw the empty canvas
+    drawData([], [])   # Redraw the empty canvas
 
 # Tkinter UI Setup (Ensure you use grid() for layout consistency)
 root = tk.Tk()  # Create the main window
