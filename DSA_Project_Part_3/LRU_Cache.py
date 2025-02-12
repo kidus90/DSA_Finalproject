@@ -163,7 +163,7 @@ capacity_entry.grid(row=1, column=1, padx=10, pady=5)
 set_capacity_button = tk.Button(UI_frame, text="Set Capacity", command=set_capacity)
 set_capacity_button.grid(row=1, column=2, padx=10, pady=5)
 
-tk.Button(UI_frame, text="Add Word", command=add_word).grid(row=0, column=2, padx=10, pady=5)
+tk.Button(UI_frame, text="Search", command=add_word).grid(row=0, column=2, padx=10, pady=5)
 
 reset_button = tk.Button(UI_frame, text="Reset", command=reset)
 reset_button.grid(row=3, column=2, padx=10, pady=5)
